@@ -183,3 +183,17 @@ sudo chown www-data:www-data nextcloud
 ```
 
 ![nextcloud](./assets/nextcloud.png)
+
+##### [7. Plex Server](https://pimylifeup.com/raspberry-pi-plex-server/)
+
+```shell
+sudo apt-get install apt-transport-https
+curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
+echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
+sudo apt-get update
+sudo apt install plexmediaserver
+```
+
+> http://raspberrypi.local:32400/web
+
+![plex](./assets/plex.png)
