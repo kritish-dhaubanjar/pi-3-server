@@ -145,3 +145,41 @@ sudo systemctl start transmission-daemon
 > http://raspberrypi.local:9091
 
 ![transmission](./assets/transmission.png)
+
+##### [7. MYSql](https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-18-04)
+
+```shell
+sudo apt install mariadb-server
+sudo mysql
+```
+
+```sql
+GRANT ALL ON *.* TO 'pi'@'localhost' IDENTIFIED BY 'raspberry' WITH GRANT OPTION;
+exit
+FLUSH PRIVILEGES;
+```
+
+##### [6. NextCloud](https://nextcloud.com/install/#instructions-server)
+
+```shell
+sudo apt install
+sudo mkdir /var/www/html/nextcloud
+cd /var/www/html/nextcloud
+sudo wget https://download.nextcloud.com/server/installer/setup-nextcloud.php
+
+sudo apt install apache2 libapache2-mod-php7.4
+sudo apt install php7.4-gd php7.4-mysql php7.4-curl php7.4-mbstring php7.4-intl
+sudo apt install php7.4-gmp php7.4-bcmath php-imagick php7.4-xml php7.4-zip
+```
+
+> http://raspberrypi.local/nextcloud
+
+```shell
+mkdir /mnt/titan/nextcloud
+chmod -R 770 /mnt/titan/nextcloud
+cd /mnt/titan/nextcloud
+touch .ocdata
+sudo chown www-data:www-data nextcloud
+```
+
+![nextcloud](./assets/nextcloud.png)
