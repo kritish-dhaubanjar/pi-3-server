@@ -18,7 +18,7 @@ ssh-copy-id -i id_rsa.pub -o PreferredAuthentications=password pi@raspberrypi.lo
 sudo apt install cockpit
 ```
 
-> http://raspberrypi.local:9091
+> http://raspberrypi.local:9090
 
 ![cokcpit](./assets/cockpit.png)
 
@@ -142,6 +142,6 @@ sudo chown -R pi:pi /home/pi/.config/transmission-daemon/
 sudo systemctl start transmission-daemon
 ```
 
-> http://raspberrypi.local:9090
+> http://raspberrypi.local:9091
 
 ![transmission](./assets/transmission.png)
