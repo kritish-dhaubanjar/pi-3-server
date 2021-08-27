@@ -197,3 +197,33 @@ sudo apt install plexmediaserver
 > http://raspberrypi.local:32400/web
 
 ![plex](./assets/plex.png)
+
+##### [8. StrongB0x Accounting]()
+
+```shell
+nvim /etc/systemd/system/strongB0x.service
+```
+
+```
+[Unit]
+Description=StrongB0x account service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=www-data
+WorkingDirectory=/mnt/titan/Projects/strongB0x-php
+ExecStart=/usr/bin/env php artisan serve --host=0.0.0.0
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```shell
+sudo systemctl restart strongB0x.service
+```
+
+![strongB0x-php](https://raw.githubusercontent.com/kritish-dhaubanjar/strongB0x-php/master/preview/vendor.png)
+
+> http://raspberrypi.local:8000
