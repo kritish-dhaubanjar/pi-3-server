@@ -227,3 +227,15 @@ sudo systemctl restart strongB0x.service
 ![strongB0x-php](https://raw.githubusercontent.com/kritish-dhaubanjar/strongB0x-php/master/preview/vendor.png)
 
 > http://raspberrypi.local:8000
+
+##### [9. pi-hole](https://pi-hole.net)
+
+```shell
+curl -sSL https://install.pi-hole.net | bash
+```
+
+![image](https://user-images.githubusercontent.com/25634165/149185897-bbbee9d4-706e-491e-957d-8907ee8ec363.png)
+
+![image](https://user-images.githubusercontent.com/25634165/149191825-7dd1721a-3887-4bf9-9021-53764fccf729.png)
+
+> http://<IP_ADDPRESS_OF_YOUR_PI_HOLE>/admin/
