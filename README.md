@@ -239,3 +239,12 @@ curl -sSL https://install.pi-hole.net | bash
 ![image](https://user-images.githubusercontent.com/25634165/149191825-7dd1721a-3887-4bf9-9021-53764fccf729.png)
 
 > http://<IP_ADDPRESS_OF_YOUR_PI_HOLE>/admin/
+
+##### [10. Dataplicity](https://www.dataplicity.com)
+
+```shell
+curl -s https://www.dataplicity.com/2pm1e433.py | sudo python 
+```
+
+![dataplicity](https://user-images.githubusercontent.com/25634165/149653111-0934229c-c724-4b97-aaf8-fcb4b5c67994.png)
+
