@@ -243,8 +243,58 @@ curl -sSL https://install.pi-hole.net | bash
 ##### [10. Dataplicity](https://www.dataplicity.com)
 
 ```shell
-curl -s https://www.dataplicity.com/2pm1e433.py | sudo python 
+curl -s https://www.dataplicity.com/2pm1e433.py | sudo python
 ```
 
 ![dataplicity](https://user-images.githubusercontent.com/25634165/149653111-0934229c-c724-4b97-aaf8-fcb4b5c67994.png)
 
+##### 10. [Sharing the Raspberry Pi's WiFi/USB over the Ethernet Port usb0->eth0](https://www.youtube.com/watch?v=TtLNue7gzZA)
+
+1. Install `dnsmasq`
+
+```shell
+sudo apt install dnsmasq
+```
+
+2. Assign Static IP Address
+
+```shell
+sudo vim /etc/dhcpcd.conf
+```
+
+```shell
+interface eth0
+static ip_address=192.168.88.254/24
+```
+
+3. Enable DHCP Server in `eth0`
+
+```shell
+sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.bak
+sudo vim /etc/dnsmasq.conf
+```
+
+```shell
+interface=eth0
+dhcp-range=192.168.88.100,192.168.88.253,255.255.255.0
+```
+
+4. Enable IPv4 forwarding
+
+```shell
+sudo vim /etc/sysctl.conf
+```
+
+`net.ipv4.ip_forward=1`
+
+5. iptable Rules
+
+```shell
+vim /etc/rc.local
+```
+
+```shell
+...
+iptables -t nat -A POSTROUTING -o usb0 -j MASQUERADE
+exit 0
+```
