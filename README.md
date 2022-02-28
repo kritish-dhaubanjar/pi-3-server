@@ -298,3 +298,6 @@ vim /etc/rc.local
 iptables -t nat -A POSTROUTING -o usb0 -j MASQUERADE
 exit 0
 ```
+
+![image](https://user-images.githubusercontent.com/25634165/155953596-08c7cbf2-1c3e-4162-b7fe-848257c872ff.png)
+
