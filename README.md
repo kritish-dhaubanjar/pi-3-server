@@ -248,6 +248,27 @@ curl -s https://www.dataplicity.com/2pm1e433.py | sudo python
 
 ![dataplicity](https://user-images.githubusercontent.com/25634165/149653111-0934229c-c724-4b97-aaf8-fcb4b5c67994.png)
 
+
+`/etc/cockpit/cockpit.conf`
+
+```ini
+[WebService] 
+Origins = https://www.example.net wss://www.example.net
+ProtocolHeader = X-Forwarded-Proto
+```
+
+```nginx
+location / {
+  proxy_pass http://127.0.0.1:9090;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header Host $host;
+  proxy_http_version 1.1;
+  proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection "upgrade";
+}
+
+```
+
 ##### 10. [Sharing the Raspberry Pi's WiFi/USB over the Ethernet Port usb0->eth0](https://www.youtube.com/watch?v=TtLNue7gzZA)
 
 1. Install `dnsmasq`
