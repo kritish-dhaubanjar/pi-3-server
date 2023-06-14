@@ -165,6 +165,7 @@ FLUSH PRIVILEGES;
 sudo apt install
 sudo mkdir /var/www/html/nextcloud
 cd /var/www/html/nextcloud
+sudo chown -R www-data:www-data /var/www/html/nextcloud/
 sudo wget https://download.nextcloud.com/server/installer/setup-nextcloud.php
 
 sudo apt install apache2 libapache2-mod-php7.4
