@@ -173,6 +173,14 @@ sudo apt install php7.4-gd php7.4-mysql php7.4-curl php7.4-mbstring php7.4-intl
 sudo apt install php7.4-gmp php7.4-bcmath php-imagick php7.4-xml php7.4-zip
 ```
 
+```
+sudo mysql -u pi -p
+CREATE DATABASE nextclouddb;
+CREATE USER 'nextclouduser'@'localhost' IDENTIFIED BY '[PASSWORD]';
+GRANT ALL PRIVILEGES ON nextclouddb.* TO 'nextclouduser'@'localhost';
+FLUSH PRIVILEGES;
+```
+
 > http://raspberrypi.local/nextcloud
 
 ```shell
